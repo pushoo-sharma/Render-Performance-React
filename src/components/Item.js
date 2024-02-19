@@ -1,6 +1,6 @@
-import React from 'react';
+import {memo} from 'react';
 
-const Item = ({ id, value, onChange }) => {
+const Item = memo(({ id, value, onChange }) => {
   return (
     <form className="Item">
       <h5 className="Item-render">RE-RENDER {(Math.random() * 100).toFixed()}</h5>
@@ -15,6 +15,6 @@ const Item = ({ id, value, onChange }) => {
       />
     </form>
   );
-};
+});
 
 export default Item;
