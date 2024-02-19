@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import './App.css';
 import Item from './components/Item';
 
@@ -9,7 +9,7 @@ function App() {
     { value: '', id: '3' },
   ]);
 
-  const changeValue = (id, value) => {
+  const changeValue = useCallback((id, value) => {
     setItemValues(prevItems =>
       prevItems.map(item => {
         if (item.id === id) {
@@ -18,7 +18,7 @@ function App() {
         return item;
       })
     );
-  };
+  }, []);
 
   return (
     <div className="App">
